@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        themeMode: ThemeMode.system,
+        themeMode: ThemeMode.dark,
         initialRoute: Routes.login,
         routes: {
           Routes.login: (context) => const LoginScreen(),
