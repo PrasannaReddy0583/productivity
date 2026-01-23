@@ -168,7 +168,9 @@ class AuthService {
   Future<void> logout() async {
     try {
       // Try to call logout endpoint (don't wait for it)
-      _apiClient.post(ApiConstants.logoutEndpoint).catchError((_) {});
+      _apiClient.post(ApiConstants.logoutEndpoint).catchError((_) {
+        
+      });
     } finally {
       // Always clear local storage
       await _storage.clear();
