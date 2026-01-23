@@ -92,7 +92,7 @@ class ApiClient {
         case 'GET':
           response = await _client
               .get(uri, headers: requestHeaders)
-              .timeout(const Duration(seconds: 30));
+              .timeout(const Duration(seconds: 120));
           break;
         case 'POST':
           response = await _client
@@ -101,7 +101,7 @@ class ApiClient {
                 headers: requestHeaders,
                 body: body != null ? jsonEncode(body) : null,
               )
-              .timeout(const Duration(seconds: 30));
+              .timeout(const Duration(seconds: 120));
           break;
         case 'PUT':
           response = await _client
@@ -110,12 +110,12 @@ class ApiClient {
                 headers: requestHeaders,
                 body: body != null ? jsonEncode(body) : null,
               )
-              .timeout(const Duration(seconds: 30));
+              .timeout(const Duration(seconds: 120));
           break;
         case 'DELETE':
           response = await _client
               .delete(uri, headers: requestHeaders)
-              .timeout(const Duration(seconds: 30));
+              .timeout(const Duration(seconds: 120));
           break;
         default:
           throw ApiException('Unsupported HTTP method: $method');
@@ -227,7 +227,7 @@ class ApiClient {
         Uri.parse('$baseUrl${ApiConstants.refreshTokenEndpoint}'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'refreshToken': refreshToken}),
-      ).timeout(const Duration(seconds: 10));
+      ).timeout(const Duration(seconds: 120));
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);

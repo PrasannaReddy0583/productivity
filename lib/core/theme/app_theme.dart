@@ -50,7 +50,7 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       fontFamily: 'Poppins',
-      textTheme: ThemeData.light().textTheme.apply(
+      textTheme: ThemeData.dark().textTheme.apply(
       fontFamily: 'Poppins',
       ),
       colorScheme: ColorScheme.fromSeed(

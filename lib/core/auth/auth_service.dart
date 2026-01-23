@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:productivity/core/auth/network/api_client.dart';
 import 'package:productivity/core/auth/storage/secure_storage.dart';
 import 'package:productivity/core/constants/api_constants.dart';
@@ -32,7 +33,7 @@ class AuthService {
         },
       );
 
-      if (!response.success) {
+      if (response.statusCode != 200) {
         throw AuthException('Login failed');
       }
 
@@ -168,12 +169,12 @@ class AuthService {
   Future<void> logout() async {
     try {
       // Try to call logout endpoint (don't wait for it)
-      _apiClient.post(ApiConstants.logoutEndpoint).catchError((_) {
-        
-      });
-    } finally {
+      _apiClient.post(ApiConstants.logoutEndpoint);
+    }
+    finally {
       // Always clear local storage
       await _storage.clear();
+      debugPrint("Hello");
     }
   }
 

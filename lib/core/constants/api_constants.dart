@@ -1,7 +1,7 @@
 /// API endpoint constants
 class ApiConstants {
   // Base URL - Change this to your actual API URL
-  static const String baseUrl = 'https://api.example.com';
+  static const String baseUrl = 'http://192.168.24.27:3000';
 
   // Auth endpoints
   static const String loginEndpoint = '/auth/login';
