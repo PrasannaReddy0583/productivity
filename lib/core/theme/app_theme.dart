@@ -6,6 +6,9 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       fontFamily: 'Poppins',
+      textTheme: ThemeData.light().textTheme.apply(
+      fontFamily: 'Poppins',
+      ),
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primary,
         brightness: Brightness.light,
@@ -46,6 +49,10 @@ class AppTheme {
   static ThemeData get darkTheme {
     return ThemeData(
       useMaterial3: true,
+      fontFamily: 'Poppins',
+      textTheme: ThemeData.light().textTheme.apply(
+      fontFamily: 'Poppins',
+      ),
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primary,
         brightness: Brightness.dark,
